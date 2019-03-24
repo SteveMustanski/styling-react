@@ -1,24 +1,22 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-
-import styles from './slide-styles';
+import PropTypes from 'prop-types'
+import React from 'react'
 
 function Slide(props) {
   return (
-    <article style={{ ...styles.root, ...props.style }}>
+    <article style={props.style}>
       <img src={props.image} alt={props.title} />
-      <footer style={styles.footer}>
-        <h2 sytle={styles.title}>{props.title}</h2>
+      <footer>
+        <h2>{props.title}</h2>
         <div>{props.children}</div>
       </footer>
     </article>
-  );
+  )
 }
 
 Slide.propTypes = {
   image: PropTypes.string.isRequired,
   style: PropTypes.object,
-  title: PropTypes.string,
-};
+  title: PropTypes.string
+}
 
-export default Slide;
+export default Slide
